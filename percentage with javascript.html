@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Math Expression with familiar operator</h1>
+
+    <form onsubmit="Calculate (); return false">
+        <label for="totalMarks"></label>
+        TotalMarks:<input type="number" min="1" required id="totalMarks" placeholder="Enter Your TotalMarks">
+        <br>
+        <br>
+        ObtainedMarks:<label for="obtainedMarks"></label>
+        <input type="number" min="1" required id="obtainedMarks" placeholder="Enter Your ObtainedMarks">
+        <br>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+
+
+    <h1 id="result"></h1>
+
+    <script>
+        function Calculate() {
+
+            let totalMarks = document.querySelector("#totalMarks").value;
+            let obtainedMarks = document.querySelector("#obtainedMarks").value;
+            let result = obtainedMarks * 100 / totalMarks;
+
+            totalMarks = Number (totalMarks);
+            obtainedMarks = Number (obtainedMarks);
+            // es6 new method
+            document.querySelector("#result").innerHTML = `You Have Got ${result + "%"}`;
+            // es5 old method
+            // document.querySelector("#result").innerHTML = "You Have Got " + result + "%";
+            
+            
+
+            
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
